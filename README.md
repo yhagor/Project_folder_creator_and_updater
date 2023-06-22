@@ -1,11 +1,11 @@
-# :construction: **Criador e Atualizador de Pastas de Projetos** :construction:
+# :construction: **Gerenciador de Pastas de Projetos - Criador e Atualizador** :construction:
 
-Este software foi desenvolvido para otimizar a atualização de várias pastas de projetos que contem os mesmos arquivos, também é possível com ele criar um novo diretório de projeto que vai receber os arquivos básicos que estão no repositório local, com base nos dados do arquivo de configuração.
+Este software foi desenvolvido para otimizar a criação e atualização de várias pastas de projetos que compartilham os mesmos arquivos. Com ele, é possível criar um novo diretório de projeto no workspace especificado, copiando os arquivos básicos do repositório local, de acordo com as configurações definidas no arquivo de configuração.
 
-Este software só atualiza os arquivos que estiverem presentes na pasta de destino, correspondente ao repositório, com isso não teremos arquivos básicos desnecessários.
+O software atualiza apenas os arquivos presentes na pasta de destino correspondente ao repositório, evitando a presença de arquivos básicos desnecessários nas pastas dos projetos.
 
 ## Arquivo de Configuração
-Este arquivo é um .json que possui as sequentes chaves:
+O arquivo de configuração é um arquivo .json que contém as seguintes chaves:
 
 - **workspace : str**
 	- Caminho completo até o workspace.
@@ -16,12 +16,12 @@ Este arquivo é um .json que possui as sequentes chaves:
 	- Ex: "Script"
 
 - **source_folders : List[str]**
-	- Pasta ou pastas que tem os arquivos que serão copiados para as pastas de projetos.
+	- Pasta(s) que contém os arquivos a serem copiados para as pastas de projetos.
 	- Ex: ["repository/library"]
 
 - **target_folders : List[str]**
-	- Pasta ou pastas que vão receber os arquivos do projeto que estão no repositório.
- 	- Ex: ["project_01/server", "project_01/client", "project_02", "project_03", "project_04", "project_04"] 
+	- Pasta(s) que receberão os arquivos do projeto presentes no repositório.
+ 	- Ex: ["project_01/server", "project_01/client", "project_02", "project_03", "project_04", "project_05"] 
 
 ## Parameters Argparse
 
@@ -33,4 +33,16 @@ Este arquivo é um .json que possui as sequentes chaves:
   - Caminho do arquivo de configuração, o padrão é na mesma pasta que tá o software.
 - -np or –new_project
   - Nome do novo diretório dentro do workspace.
- 
+
+## Cenário
+
+Imagine a seguinte situação: você possui vários arquivos básicos contendo métodos ou classes que precisam ser utilizados em diferentes projetos, os quais estão distribuídos por várias pastas. Sempre que você realizar uma alteração em um desses arquivos base, será necessário fazer manualmente a atualização em todas as outras pastas de projetos.
+
+Para solucionar esse problema, foi desenvolvido um software que visa facilitar essa tarefa. A ideia é utilizar um repositório local, onde você fará a alteração necessária no arquivo base. Em seguida, basta executar esse software para atualizar automaticamente as pastas de projetos que estão especificadas no arquivo de configuração.
+
+Com essa abordagem, você evita a necessidade de atualizar manualmente cada pasta de projeto, tornando o processo mais eficiente e eliminando possíveis erros. O software se encarrega de propagar as alterações para todas as pastas relevantes, conforme indicado no arquivo de configuração.
+
+
+<!--
+ ![](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/docs/creating_project_directory.gif)
+-->
