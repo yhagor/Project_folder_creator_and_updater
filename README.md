@@ -42,7 +42,113 @@ Para solucionar esse problema, foi desenvolvido um software que visa facilitar e
 
 Com essa abordagem, você evita a necessidade de atualizar manualmente cada pasta de projeto, tornando o processo mais eficiente e eliminando possíveis erros. O software se encarrega de propagar as alterações para todas as pastas relevantes, conforme indicado no arquivo de configuração.
 
+Então temos a seguinte estrutura do workspace com os arquivos básicos:
+```shell
+workspace
+├── repository
+│   └── library
+│       ├── Basic_enum.py
+│       ├── Class_db.py
+│       ├── Class_xyz.py
+│       ├── Decorators.py
+│       ├── Image_filter.py
+│       ├── Score_checker.py
+│       ├── basic_main_window.ui
+│       └── peripheral_analyzer.py
+├── project_01
+│   ├── client
+│   │   └── Script
+│   │       ├── Basic_enum.py
+│   │       ├── Class_db.py
+│   │       ├── Class_xyz.py
+│   │       ├── Decorators.py
+│   │       ├── Image_filter.py
+│   │       ├── Score_checker.py
+│   │       ├── basic_main_window.ui
+│   │       └── peripheral_analyzer.py
+│   └── server
+│       └── Script
+│           ├── Basic_enum.py
+│           ├── Class_db.py
+│           ├── Class_xyz.py
+│           └── Decorators.py
+├── project_02
+│   └── Script
+│       ├── Basic_enum.py
+│       ├── Class_xyz.py
+│       ├── Image_filter.py
+│       ├── Score_checker.py
+│       ├── basic_main_window.ui
+│       └── peripheral_analyzer.py
+├── project_03
+│   └── Script
+│       ├── Basic_enum.py
+│       ├── Class_db.py
+│       ├── Decorators.py
+│       ├── Score_checker.py
+│       └── basic_main_window.ui
+├── project_04
+│   └── Script
+│       ├── Class_db.py
+│       ├── Decorators.py
+│       ├── Image_filter.py
+│       ├── Score_checker.py
+│       ├── basic_main_window.ui
+│       └── peripheral_analyzer.py
+└── project_05
+    └── Script
+        ├── Basic_enum.py
+        ├── Class_xyz.py
+        ├── Decorators.py
+        ├── basic_main_window.ui
+        └── peripheral_analyzer.py
+```
+Com o arquivo de configuração preenchido corretamente, podemos atualizar as pastas de projetos:
+```json
+{
+  "workspace": "/home/gnome/Documents/workspace",
+  "internal_folder": "Script",
+  "source_folders": [
+    "repository/library"
+  ],
+  "target_folders": [
+    "project_01/server",
+    "project_01/client",
+    "project_02",
+    "project_03",
+    "project_04",
+    "project_05"
+  ]
+}
+```
+Só teremos agora que rodar o programa dessa forma:
+```
+project_creator_updater.py -up
+```
+ ![](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/docs/updating_all_directories.gif)
 
-<!--
+Para criar novos projetos com os arquivos básico é só fazer dessa forma:
+```
+project_creator_updater.py -np project_06
+```
  ![](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/docs/creating_project_directory.gif)
--->
+
+Com isso o novo projeto vai ser criado no workspace e o arquivo de configuração será atualizado.
+```json
+{
+  "workspace": "/home/gnome/Documents/workspace",
+  "internal_folder": "Script",
+  "source_folders": [
+    "repository/library"
+  ],
+  "target_folders": [
+    "project_01/server",
+    "project_01/client",
+    "project_02",
+    "project_03",
+    "project_04",
+    "project_05",
+    "project_06",
+  ]
+}
+```
