@@ -165,5 +165,10 @@ Essa funcionalidade permite que você crie configurações personalizadas de for
 
 E para alternar entre esses arquivos de configuração utilizaremos o comando:
 ```
-project_creator_updater.py -cf config/file/path -up or -np
+project_creator_updater.py -cf config/file/path -np new_project_name
 ```
+ou
+```
+project_creator_updater.py -cf config/file/path -up
+```
+Dependendo do que deseja fazer.
