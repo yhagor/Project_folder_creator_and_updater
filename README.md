@@ -152,3 +152,18 @@ Com isso o novo projeto vai ser criado no workspace e o arquivo de configuraçã
   ]
 }
 ```
+****
+O sistema suporta a utilização de vários arquivos de configuração, permitindo ter conjuntos de dados diferentes para diferentes cenários. Dessa forma, cada arquivo de configuração pode conter configurações específicas para um conjunto particular de pastas de projetos e arquivos base.
+
+Além disso, caso deseje criar um novo arquivo de configuração, você pode utilizar o seguinte comando:
+```
+project_creator_updater.py -gc
+```
+O qual criará um arquivo novo e o salvará no mesmo diretório onde o software está localizado. No entanto, é importante lembrar de renomear o arquivo de configuração anterior para evitar a sobrescrição indesejada.
+
+Essa funcionalidade permite que você crie configurações personalizadas de forma conveniente, garantindo que cada conjunto de pastas de projetos possua seu próprio arquivo de configuração, evitando conflitos e facilitando a organização do sistema.
+
+E para alternar entre esses arquivos de configuração utilizaremos o comando:
+```
+project_creator_updater.py -cf config/file/path -up or -np
+```
