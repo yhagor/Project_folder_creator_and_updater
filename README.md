@@ -1,6 +1,6 @@
 Select Language : [:us:](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/README.md) [:brazil:](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/README-pt.md)
 <h1 align="center">
-  <p align="center">:construction: Project Folder Manager :construction:</p>
+  <p align="center">Project Folder Manager</p>
   <p align="center">Creator and Updater</p>
 </h1>
 
