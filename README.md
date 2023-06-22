@@ -8,45 +8,45 @@ This software has been developed to optimize the creation and updating process o
 
 The software updates only the files present in the destination folder corresponding to the repository, avoiding the presence of unnecessary basic files in the project folders.
 
-## Arquivo de Configuração
-O arquivo de configuração é um arquivo .json que contém as seguintes chaves:
+## Configuration File
+The configuration file is a .json file that contains the following keys:
 
 - **workspace : str**
-	- Caminho completo até o workspace.
+	- Full path to the workspace.
 	- Ex: "/home/gnome/Documents/workspace"  
 	
 - **internal_folder : str**
-	- Pasta dentro de cada pasta do projeto:
+	- Folder within each project folder.
 	- Ex: "Script"
 
 - **source_folders : List[str]**
-	- Pasta(s) que contém os arquivos a serem copiados para as pastas de projetos.
+	- Folder(s) that contain the files to be copied to the project folders.
 	- Ex: ["repository/library"]
 
 - **target_folders : List[str]**
-	- Pasta(s) que receberão os arquivos do projeto presentes no repositório.
+	- Folder(s) that will receive the project files from the repository.
  	- Ex: ["project_01/server", "project_01/client", "project_02", "project_03", "project_04", "project_05"] 
 
 ## Parameters Argparse
 
 - -up or --update
-  - Com este parâmetro todas as pastas serão atualizadas.
+  - With this parameter, all folders will be updated.
 - -gc or –get_config
-  - Gerar um arquivo de configuração, ele será salvo no mesmo diretório que esta o software.
+  - Generate a configuration file, it will be saved in the same directory as the software.
 - -cf or --config_file
-  - Caminho do arquivo de configuração, o padrão é na mesma pasta que tá o software.
+  - Path of the configuration file, the default is in the same folder as the software.
 - -np or –new_project
-  - Nome do novo diretório dentro do workspace.
+  - Name of the new directory within the workspace.
 
-## Cenário
+## Scenario
 
-Imagine a seguinte situação: você possui vários arquivos básicos contendo métodos ou classes que precisam ser utilizados em diferentes projetos, os quais estão distribuídos por várias pastas. Sempre que você realizar uma alteração em um desses arquivos base, será necessário fazer manualmente a atualização em todas as outras pastas de projetos.
+Imagine the following situation: you have multiple basic files containing methods or classes that need to be used in different projects, which are distributed across various folders. Whenever you make a change to one of these base files, you would need to manually update it in all the other project folders.
 
-Para solucionar esse problema, foi desenvolvido um software que visa facilitar essa tarefa. A ideia é utilizar um repositório local, onde você fará a alteração necessária no arquivo base. Em seguida, basta executar esse software para atualizar automaticamente as pastas de projetos que estão especificadas no arquivo de configuração.
+To solve this problem, a software has been developed to facilitate this task. The idea is to use a local repository where you can make the necessary changes to the base file. Then, simply run this software to automatically update the project folders specified in the configuration file.
 
-Com essa abordagem, você evita a necessidade de atualizar manualmente cada pasta de projeto, tornando o processo mais eficiente e eliminando possíveis erros. O software se encarrega de propagar as alterações para todas as pastas relevantes, conforme indicado no arquivo de configuração.
+With this approach, you can avoid the need to manually update each project folder, making the process more efficient and eliminating potential errors. The software takes care of propagating the changes to all relevant folders as indicated in the configuration file.
 
-Então temos a seguinte estrutura do workspace com os arquivos básicos:
+Here is an example of the workspace structure with the basic files:
 ```shell
 workspace
 ├── repository
@@ -107,7 +107,7 @@ workspace
         ├── basic_main_window.ui
         └── peripheral_analyzer.py
 ```
-Com o arquivo de configuração preenchido corretamente, podemos atualizar as pastas de projetos:
+With the configuration file properly filled, we can update the project folders:
 ```json
 {
   "workspace": "/home/gnome/Documents/workspace",
@@ -125,19 +125,19 @@ Com o arquivo de configuração preenchido corretamente, podemos atualizar as pa
   ]
 }
 ```
-Só teremos agora que rodar o programa dessa forma:
+Now, all we have to do is run the program in the following way:
 ```
 project_creator_updater.py -up
 ```
  ![](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/docs/updating_all_directories.gif)
 
-Para criar novos projetos com os arquivos básico é só fazer dessa forma:
+To create new projects with the basic files, simply follow these steps:
 ```
 project_creator_updater.py -np project_06
 ```
  ![](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/docs/creating_project_directory.gif)
 
-Com isso o novo projeto vai ser criado no workspace e o arquivo de configuração será atualizado.
+This will create the new project in the workspace and update the configuration file.
 ```json
 {
   "workspace": "/home/gnome/Documents/workspace",
@@ -157,22 +157,22 @@ Com isso o novo projeto vai ser criado no workspace e o arquivo de configuraçã
 }
 ```
 ****
-O sistema suporta a utilização de vários arquivos de configuração, permitindo ter conjuntos de dados diferentes para diferentes cenários. Dessa forma, cada arquivo de configuração pode conter configurações específicas para um conjunto particular de pastas de projetos e arquivos base.
+The system supports the use of multiple configuration files, allowing for different sets of data for different scenarios. This way, each configuration file can contain specific settings for a particular set of project folders and base files.
 
-Além disso, caso deseje criar um novo arquivo de configuração, você pode utilizar o seguinte comando:
+Additionally, if you wish to create a new configuration file, you can use the following command:
 ```
 project_creator_updater.py -gc
 ```
-O qual criará um arquivo novo e o salvará no mesmo diretório onde o software está localizado. No entanto, é importante lembrar de renomear o arquivo de configuração anterior para evitar a sobrescrição indesejada.
+This command will create a new file and save it in the same directory where the software is located. However, it's important to remember to rename the previous configuration file to avoid unwanted overwriting.
 
-Essa funcionalidade permite que você crie configurações personalizadas de forma conveniente, garantindo que cada conjunto de pastas de projetos possua seu próprio arquivo de configuração, evitando conflitos e facilitando a organização do sistema.
+This functionality allows you to conveniently create customized configurations, ensuring that each set of project folders has its own configuration file, thereby avoiding conflicts and facilitating system organization.
 
-E para alternar entre esses arquivos de configuração utilizaremos o comando:
+To switch between these configuration files, you can use the command:
 ```
 project_creator_updater.py -cf config/file/path -np new_project_name
 ```
-ou
+or
 ```
 project_creator_updater.py -cf config/file/path -up
 ```
-Dependendo do que deseja fazer.
+depending on what you want to do.
