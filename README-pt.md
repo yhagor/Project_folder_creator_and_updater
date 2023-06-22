@@ -1,6 +1,6 @@
 Select Language : [:us:](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/README.md) [:brazil:](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/README-pt.md)
 <h1 align="center">
-  <p align="center">:construction: Gerenciador de Pastas de Projetos :construction:</p>
+  <p align="center">Gerenciador de Pastas de Projetos</p>
   <p align="center">Criador e Atualizador</p>
 </h1>
 
