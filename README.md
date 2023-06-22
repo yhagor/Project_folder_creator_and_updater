@@ -1,12 +1,12 @@
 Select Language : [:us:](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/README.md) [:brazil:](https://github.com/yhagor/Project_folder_creator_and_updater/blob/main/README-pt.md)
 <h1 align="center">
-  <p align="center">:construction: Gerenciador de Pastas de Projetos :construction:</p>
-  <p align="center">Criador e Atualizador</p>
+  <p align="center">:construction: Project Folder Manager :construction:</p>
+  <p align="center">Creator and Updater</p>
 </h1>
 
-Este software foi desenvolvido para otimizar a criação e atualização de várias pastas de projetos que compartilham os mesmos arquivos. Com ele, é possível criar um novo diretório de projeto no workspace especificado, copiando os arquivos básicos do repositório local, de acordo com as configurações definidas no arquivo de configuração.
+This software has been developed to optimize the creation and updating process of multiple project folders that share the same files. With it, you can create a new project directory in the specified workspace, copying the basic files from the local repository according to the settings defined in the configuration file.
 
-O software atualiza apenas os arquivos presentes na pasta de destino correspondente ao repositório, evitando a presença de arquivos básicos desnecessários nas pastas dos projetos.
+The software updates only the files present in the destination folder corresponding to the repository, avoiding the presence of unnecessary basic files in the project folders.
 
 ## Arquivo de Configuração
 O arquivo de configuração é um arquivo .json que contém as seguintes chaves:
