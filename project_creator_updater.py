@@ -198,9 +198,9 @@ def validator(update : bool, config_file_path : str, new_project_name : Union[No
     valid = True
 
     if get_config_file:
-        data = {"workspace"       : "D:/usr/Documentos/playground/Yhagor/Scripts/workspace", 
+        data = {"workspace"       : "path/workspace", 
                 "internal_folder" : "Script",
-                "source_folders"  : ["repository/library"],
+                "source_folders"  : ["path/repository/library"],
                 "target_folders"  : ["project_01/server", "project_01/client", "project_02", "project_03", "project_05", "project_06"]                   
                 }
         with open(config_file_path, 'w') as config_file:
