@@ -11,7 +11,7 @@ from os import listdir, makedirs
 
 from typing import (Dict, List, Union)
 
-PROGRAM_NAME     = 'Lib Update'
+PROGRAM_NAME     = 'Project Creator Updater'
 MAJOR_VERSION    = '1'
 MINOR_VERSION    = '0'
 REVISION_VERSION = '0'
