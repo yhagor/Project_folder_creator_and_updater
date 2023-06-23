@@ -199,7 +199,7 @@ def validator(update : bool, config_file_path : str, new_project_name : Union[No
 
     if get_config_file:
         data = {"workspace"       : "path/workspace", 
-                "internal_folder" : "Script",
+                "internal_folder" : "script",
                 "source_folders"  : ["path/repository/library"],
                 "target_folders"  : ["project_01/server", "project_01/client", "project_02", "project_03", "project_05", "project_06"]                   
                 }
